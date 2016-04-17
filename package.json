@@ -1,0 +1,17 @@
+{
+  "name": "mathvana",
+  "version": "0.0.1",
+  "devDependencies": {
+    "babel-core": "^6.7.6",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-1": "^6.5.0",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "nerdamer": "^0.5.7",
+    "numbers": "^0.6.0"
+  }
+}
