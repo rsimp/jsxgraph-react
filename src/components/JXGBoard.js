@@ -22,14 +22,14 @@ export default class JXGBoard extends Component {
     }
 
     //called only if shouldComponentUpdate returns true
-    //mostly just use for rendering child content and the JSXGraph board div
+    //for rendering the JSXGraph board div and any child elements
     render() {
         var style = _.assign(this.defaultStyle, this.props.style || {});
-        var content = this.state.board ? this.props.children : null;
+        var children = this.state.board ? this.props.children : null;
 
         return (
             <div id={this.id} className="jxgbox" style={style}>
-                {content}
+                {children}
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 export default class Antiderivative extends Component {
-    //called only before initial render
+    //called only before initial render, use to create JSXGraph elements
     componentWillMount(){
         //create first glider
         var X = Number(this.props.leftBound);
@@ -83,7 +83,7 @@ export default class Antiderivative extends Component {
     }
 
     //called only if shouldComponentUpdate returns true, before each render
-    //use this function as the true JSXGraph render function
+    //use to update JSXGraph elements when props or state changes
     componentWillUpdate(nextProps, nextState, nextContext){
         if (this.props.leftBound != nextProps.leftBound){
             var leftGliderX = nextProps.leftBound;
@@ -98,7 +98,7 @@ export default class Antiderivative extends Component {
     }
 
     //called only if shouldComponentUpdate returns true
-    //mostly just use for rendering child content, starting their lifecycles
+    //mostly for rendering child content
     render() {
         //no children
         return null;

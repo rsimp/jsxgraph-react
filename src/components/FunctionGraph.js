@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 export default class FunctionGraph extends Component {
-    //called only before initial render
+    //called only before initial render, use to create JSXGraph elements
     componentWillMount(){
         this.functionGraph = this.context.board.create('functiongraph',[this.props.function,-20,20]);
     }
@@ -12,7 +12,7 @@ export default class FunctionGraph extends Component {
     }
 
     //called only if shouldComponentUpdate returns true, before each render
-    //use this function as the true JSXGraph render function
+    //use to update JSXGraph elements when props or state changes
     componentWillUpdate(nextProps, nextState, nextContext){
         if (this.props.function != nextProps.function){
             this.functionGraph.Y = nextProps.function;
@@ -22,7 +22,7 @@ export default class FunctionGraph extends Component {
     }
 
     //called only if shouldComponentUpdate returns true
-    //mostly just use for rendering child content
+    //mostly for rendering child content
     render() {
         //render children if JSXGraph element was successfully created
         return (this.functionGraph && this.props.children) ? this.props.children : null;
