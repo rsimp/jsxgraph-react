@@ -1,11 +1,15 @@
-/**
- * Created by Robert on 4/16/2016.
- */
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
+
 module.exports = {
-    entry: "./entry.js",
+    entry: [
+        'webpack-dev-server/client?http://localhost:3000', //--inline
+        'webpack/hot/only-dev-server', //--hot
+        './src/index.js',
+    ],
     output: {
-        path: __dirname,
-        filename: "bundle.js"
+        path: __dirname + "/dist",
+        filename: "app.js"
     },
     module: {
         loaders: [
@@ -16,12 +20,15 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: ["babel"],
-                query: {
-                    presets: ['es2015', 'react', 'stage-1', 'react-hmre'],
-                    cacheDirectory: true
-                }
+                loaders: ["react-hot", "babel"],
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            template: 'src/index.template.html',
+            filename: 'index.html'
+        })
+    ]
 };
