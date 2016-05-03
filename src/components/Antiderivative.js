@@ -98,7 +98,7 @@ export default class Antiderivative extends Component {
     }
 
     //called only if shouldComponentUpdate returns true
-    //mostly for rendering child content
+    //use to render any child elements
     render() {
         //no children
         return null;

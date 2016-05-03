@@ -22,7 +22,7 @@ export default class FunctionGraph extends Component {
     }
 
     //called only if shouldComponentUpdate returns true
-    //mostly for rendering child content
+    //use to render any child elements
     render() {
         //render children if JSXGraph element was successfully created
         return (this.functionGraph && this.props.children) ? this.props.children : null;

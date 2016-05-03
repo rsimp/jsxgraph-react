@@ -47,7 +47,7 @@ export default class Integral extends Component {
     }
 
     //called only if shouldComponentUpdate returns true
-    //mostly just use for rendering child content, starting their lifecycles
+    //use to render any child elements
     render() {
         //no children
         return null;
