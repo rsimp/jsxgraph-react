@@ -17,7 +17,7 @@ export default class App extends Component {
             leftBound: -2,
             rightBound: 1,
             function: func,
-            antiderivativeFunction: mathutil.createAntiderivative(func),
+            antiderivative: mathutil.createAntiderivative(func),
         };
 
         this.leftBoundOnDrag = this.leftBoundOnDrag.bind(this);
@@ -38,7 +38,7 @@ export default class App extends Component {
 
         this.setState({
             function: func,
-            antiderivativeFunction: mathutil.createAntiderivative(func)
+            antiderivative: mathutil.createAntiderivative(func)
         });
     }
 
@@ -46,7 +46,7 @@ export default class App extends Component {
         return (
             <div>
                 <JXGBoard>
-                    <FunctionGraph function={this.state.antiderivativeFunction}>
+                    <FunctionGraph function={this.state.antiderivative}>
                         <Antiderivative leftBound={this.state.leftBound} rightBound={this.state.rightBound}
                                         leftBoundOnDrag={this.leftBoundOnDrag} rightBoundOnDrag={this.rightBoundOnDrag}/>
                     </FunctionGraph>
