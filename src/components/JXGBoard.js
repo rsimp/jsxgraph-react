@@ -24,8 +24,7 @@ export default class JXGBoard extends Component {
     //called only if shouldComponentUpdate returns true
     //mostly just use for rendering child content and the JSXGraph board div
     render() {
-        var style = this.props.style || {};
-        style = _.assign(style, this.defaultStyle);
+        var style = _.assign(this.defaultStyle, this.props.style || {});
         var content = this.state.board ? this.props.children : null;
 
         return (
