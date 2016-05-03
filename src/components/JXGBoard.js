@@ -16,6 +16,7 @@ export default class JXGBoard extends Component {
 
     //called only after initial render
     componentDidMount(){
+        //now that div exists, create new JSXGraph board with it
         this.setState({
             board: JXG.JSXGraph.initBoard(this.id, {boundingbox:[-3,10,3,-3],axis:true})
         });
@@ -25,7 +26,7 @@ export default class JXGBoard extends Component {
     //for rendering the JSXGraph board div and any child elements
     render() {
         var style = _.assign(this.defaultStyle, this.props.style || {});
-        var children = this.state.board ? this.props.children : null;
+        var children = this.state.board ? this.props.children : null; //only pass in children if board exists
 
         return (
             <div id={this.id} className="jxgbox" style={style}>
