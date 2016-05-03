@@ -9,18 +9,22 @@ import nerdamer from 'nerdamer';
 export default class App extends Component {
     constructor(props) {
         super(props);
+
+        this.defaultEquationText = "x^2 + 4x + 4";
+        var func = nerdamer(this.defaultEquationText).buildFunction();
+
         this.state = {
             leftBound: -2,
             rightBound: 1,
-            function: nerdamer("x^2 + 4x + 4").buildFunction()
+            function: func,
+            antiderivativeFunction: mathutil.createAntiderivative(func),
         };
-        this.antiderivativeFunc = mathutil.createAntiderivative(this.state.function);
 
         this.leftBoundOnDrag = this.leftBoundOnDrag.bind(this);
         this.rightBoundOnDrag = this.rightBoundOnDrag.bind(this);
         this.updateEquation = this.updateEquation.bind(this);
     }
-aqz
+
     leftBoundOnDrag(glider){
         this.setState({leftBound: glider.X()});
     }
@@ -30,17 +34,19 @@ aqz
     }
 
     updateEquation(){
-        console.log(this.refs.equation.value);
         var func =  nerdamer(this.refs.equation.value).buildFunction();
-        this.antiderivativeFunc =  mathutil.createAntiderivative(func);
-        this.setState({function: func});
+
+        this.setState({
+            function: func,
+            antiderivativeFunction: mathutil.createAntiderivative(func)
+        });
     }
 
     render() {
         return (
             <div>
                 <JXGBoard>
-                    <FunctionGraph function={this.antiderivativeFunc}>
+                    <FunctionGraph function={this.state.antiderivativeFunction}>
                         <Antiderivative leftBound={this.state.leftBound} rightBound={this.state.rightBound}
                                         leftBoundOnDrag={this.leftBoundOnDrag} rightBoundOnDrag={this.rightBoundOnDrag}/>
                     </FunctionGraph>
@@ -55,7 +61,7 @@ aqz
 
                 <div style={{marginTop:5}}>
                     <span style={{marginLeft:5}}>f(x)= </span>
-                    <input type="text" defaultValue="x^2 + 4x + 4" ref="equation"/>
+                    <input type="text" defaultValue={this.defaultEquationText} ref="equation"/>
                     <input type="button" onClick={this.updateEquation} value="Update" style={{marginLeft:5}}/>
                 </div>
             </div>
