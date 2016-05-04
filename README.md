@@ -1,6 +1,7 @@
 # jsxgraph-react
 
 [![Join the chat at https://gitter.im/rsimp/jsxgraph-react](https://badges.gitter.im/rsimp/jsxgraph-react.svg)](https://gitter.im/rsimp/jsxgraph-react?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 jsxgraph-react is a react component library that wraps [JSXGraph](http://jsxgraph.uni-bayreuth.de/) elements
 
 After cloning the repo run `npm install` and then `npm start`
