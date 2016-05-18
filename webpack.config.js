@@ -2,6 +2,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
+    debug: true,
+    devTools: 'sourcemap',
     entry: [
         'webpack-dev-server/client?http://localhost:3000', //--inline
         'webpack/hot/only-dev-server', //--hot
