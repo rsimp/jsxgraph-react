@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class FunctionGraph extends Component {
+export class FunctionGraph extends Component {
     //called only before initial render, use to create JSXGraph elements
     componentWillMount(){
         this.functionGraph = this.context.board.create('functiongraph',[this.props.function,-20,20]);

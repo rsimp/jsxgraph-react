@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Antiderivative extends Component {
+export class Antiderivative extends Component {
     //called only before initial render, use to create JSXGraph elements
     componentWillMount(){
         //create first glider
@@ -9,7 +9,6 @@ export default class Antiderivative extends Component {
         this.leftGlider = this.context.board.create('glider',[X, Y, this.context.functionGraph],{name:'A'});
 
         //create line for first glider
-        Y = this.context.functionGraph.Y(X);
         this.context.board.create('line',
             [this.leftGlider, () => [this.leftGlider.X()+1, this.leftGlider.Y()]],
             {
@@ -32,7 +31,6 @@ export default class Antiderivative extends Component {
         this.rightGlider = this.context.board.create('glider',[X, Y, this.context.functionGraph],{name:'B'});
 
         //create line for second glider
-        Y = this.context.functionGraph.Y(X);
         this.context.board.create('line',
             [ this.rightGlider, () => [this.rightGlider.X()+1, this.rightGlider.Y()] ],
             {

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import JXGBoard from './JXGBoard';
-import FunctionGraph from './FunctionGraph';
-import Integral from './Integral';
-import Antiderivative from './Antiderivative';
-import * as mathutil from '../utils/mathutil';
+import {JXGBoard, FunctionGraph, Integral, Antiderivative} from 'jsxgraph-react';
+import * as mathutil from './utils/mathutil';
 import nerdamer from 'nerdamer';
 
 export default class App extends Component {
@@ -17,7 +14,7 @@ export default class App extends Component {
             leftBound: -2,
             rightBound: 1,
             function: func,
-            antiderivative: mathutil.createAntiderivative(func),
+            antiderivative: mathutil.createAntiderivative(func)
         };
 
         this.leftBoundOnDrag = this.leftBoundOnDrag.bind(this);
