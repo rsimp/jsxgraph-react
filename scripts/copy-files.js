@@ -3,7 +3,7 @@ import path from 'path';
 import fse from 'fs-extra';
 
 const files = [
-  'README.md',
+  'README.md'
 ];
 
 Promise.all(
@@ -42,32 +42,19 @@ function createPackageFile() {
   })
   .then((data) => JSON.parse(data))
   .then((packageData) => {
-    const {
-      author,
-      version,
-      description,
-      keywords,
-      repository,
-      license,
-      bugs,
-      homepage,
-      peerDependencies,
-      dependencies,
-    } = packageData;
-
     const minimalPackage = {
-      name: 'material-ui',
-      author,
-      version,
-      description,
+      name: packageData.name,
+      author: packageData.author,
+      version: packageData.version,
+      description: packageData.description,
       main: './index.js',
-      keywords,
-      repository,
-      license,
-      bugs,
-      homepage,
-      peerDependencies,
-      dependencies,
+      keywords: packageData.keywords,
+      repository: packageData.repository,
+      license: packageData.license,
+      bugs: packageData.bugs,
+      homepage: packageData.homepage,
+      peerDependencies: packageData.peerDependencies,
+      dependencies: packageData.dependencies
     };
 
     return new Promise((resolve) => {
