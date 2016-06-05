@@ -1,1 +1,1 @@
-export * from './Integral';
+export { Integral } from './Integral';
