@@ -1,1 +1,1 @@
-export * from './Antiderivative';
+export { Antiderivative } from './Antiderivative';

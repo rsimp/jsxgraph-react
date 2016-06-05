@@ -1,6 +1,6 @@
 //self
-export * from './FunctionGraph';
+export { FunctionGraph } from './FunctionGraph';
 
 //children
-export * from './Antiderivative';
-export * from './Integral';
+export { Antiderivative } from './Antiderivative';
+export { Integral } from './Integral';

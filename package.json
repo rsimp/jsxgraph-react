@@ -29,7 +29,8 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
     "fs-extra": "^0.30.0",
-    "react-hot-loader": "^1.3.0"
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.13.1"
   },
   "dependencies": {
     "core-decorators": "^0.12.2",

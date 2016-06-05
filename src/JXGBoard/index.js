@@ -1,5 +1,5 @@
 //self
-export * from './JXGBoard';
+export { JXGBoard } from './JXGBoard';
 
 //children
-export * from './FunctionGraph';
+export { FunctionGraph, Antiderivative, Integral } from './FunctionGraph';

@@ -1,1 +1,1 @@
-export * from './JXGBoard';
+export { JXGBoard, FunctionGraph, Integral, Antiderivative } from './JXGBoard';
