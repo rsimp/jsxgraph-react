@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import {throttle} from 'core-decorators'
 
-export default class Integral extends Component {
+export class Integral extends Component {
     //called only before initial render, use to create JSXGraph elements
     componentWillMount() {
         //create left glider
@@ -47,8 +47,8 @@ export default class Integral extends Component {
     }
 
     _syncGlider() {
-        this._onLeftDrag()
-        this._onRightDrag()
+        this._onLeftDrag();
+        this._onRightDrag();
     }
 
     //called only if shouldComponentUpdate returns true, before each render
@@ -74,14 +74,14 @@ export default class Integral extends Component {
         return null;
     }
 }
-Integral.displayName = 'Integral'
+Integral.displayName = 'Integral';
 Integral.propTypes = {
     rightBoundOnDrag: PropTypes.func,
     leftBoundOnDrag: PropTypes.func,
     leftBound: PropTypes.number.isRequired,
     rightBound: PropTypes.number.isRequired
-}
-Integral.defaultProps = {}
+};
+Integral.defaultProps = {};
 Integral.contextTypes = {
     board: React.PropTypes.object,
     functionGraph: React.PropTypes.object

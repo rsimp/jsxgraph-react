@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
 
-export default class JXGBoard extends Component {
+export class JXGBoard extends Component {
     constructor(props) {
         super(props);
         this.id = _.uniqueId("board-");
