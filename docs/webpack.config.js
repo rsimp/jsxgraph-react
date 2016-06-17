@@ -1,6 +1,7 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var path = require('path');
+var packageMetadata = require("../package.json");
 
 module.exports = {
     debug: true,
@@ -16,7 +17,7 @@ module.exports = {
         }
     },
     output: {
-        path: __dirname + "/dist",
+        path: __dirname + "/dist/" + packageMetadata.version,
         filename: "app.js"
     },
     module: {
@@ -37,6 +38,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.tpl.html',
             filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/index.tpl.html',
+            filename: '../index.html'
         })
     ]
 };

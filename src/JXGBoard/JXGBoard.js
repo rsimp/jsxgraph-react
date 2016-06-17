@@ -6,7 +6,7 @@ export class JXGBoard extends Component {
         super(props);
         this.id = _.uniqueId("board-");
         this.state = {board: null};
-        this.defaultStyle = {width:500, height:500};
+        this.defaultStyle = {width:400, height:400};
     }
 
     //called right before child lifecycles, passes context object to all children
