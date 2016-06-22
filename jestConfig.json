@@ -1,0 +1,15 @@
+{
+    "rootDir": "src",
+    "verbose": true,
+    "collectCoverage": true,
+    "scriptPreprocessor": "../preprocessor.js",
+    "moduleFileExtensions": [
+    "js"
+],
+    "unmockedModulePathPatterns": [
+    "../node_modules/react",
+    "../node_modules/react-dom",
+    "../node_modules/react-addons-test-utils",
+    "../node_modules/*"
+]
+}

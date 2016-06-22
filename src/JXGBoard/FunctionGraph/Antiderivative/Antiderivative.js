@@ -83,7 +83,7 @@ export class Antiderivative extends Component {
     //called only if shouldComponentUpdate returns true, before each render
     //use to update JSXGraph elements when props or state changes
     componentWillUpdate(nextProps, nextState, nextContext){
-        if (this.props.leftBound != nextProps.leftBound){
+        if (this.props.leftBound != nextProtestps.leftBound){
             var leftGliderX = nextProps.leftBound;
             var leftGliderY = this.context.functionGraph.Y(leftGliderX);
             this.leftGlider.moveTo([leftGliderX, leftGliderY]);
