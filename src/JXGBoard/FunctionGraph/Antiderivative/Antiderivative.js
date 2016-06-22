@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export class Antiderivative extends Component {
     //called only before initial render, use to create JSXGraph elements
@@ -101,6 +101,14 @@ export class Antiderivative extends Component {
         //no children
         return null;
     }
+}
+
+Antiderivative.dipslayName = 'Antiderivative';
+Antiderivative.propTypes = {
+    leftBound:  PropTypes.number.required,
+    rightBound: PropTypes.number.required,
+    leftBoundOnDrag:    PropTypes.func,
+    rightBoundOnDrag:   PropTypes.func
 }
 
 Antiderivative.contextTypes = {
