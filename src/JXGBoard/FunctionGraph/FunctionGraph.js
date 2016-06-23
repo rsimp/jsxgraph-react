@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export class FunctionGraph extends Component {
     //called only before initial render, use to create JSXGraph elements
@@ -27,7 +27,10 @@ export class FunctionGraph extends Component {
         return this.props.children || null;
     }
 }
-
+FunctionGraph.propTypes = {
+    //May consider renaming this
+    'function': PropTypes.function
+}
 FunctionGraph.contextTypes = {
     board: React.PropTypes.object
 };

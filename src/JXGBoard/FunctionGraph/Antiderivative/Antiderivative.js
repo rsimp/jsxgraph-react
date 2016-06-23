@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export class Antiderivative extends Component {
     //called only before initial render, use to create JSXGraph elements
@@ -83,7 +83,7 @@ export class Antiderivative extends Component {
     //called only if shouldComponentUpdate returns true, before each render
     //use to update JSXGraph elements when props or state changes
     componentWillUpdate(nextProps, nextState, nextContext){
-        if (this.props.leftBound != nextProps.leftBound){
+        if (this.props.leftBound != nextProtestps.leftBound){
             var leftGliderX = nextProps.leftBound;
             var leftGliderY = this.context.functionGraph.Y(leftGliderX);
             this.leftGlider.moveTo([leftGliderX, leftGliderY]);
@@ -101,6 +101,14 @@ export class Antiderivative extends Component {
         //no children
         return null;
     }
+}
+
+Antiderivative.dipslayName = 'Antiderivative';
+Antiderivative.propTypes = {
+    leftBound:  PropTypes.number.required,
+    rightBound: PropTypes.number.required,
+    leftBoundOnDrag:    PropTypes.func,
+    rightBoundOnDrag:   PropTypes.func
 }
 
 Antiderivative.contextTypes = {
