@@ -21,6 +21,10 @@ export class FunctionGraph extends Component {
         }
     }
 
+    componentWillUnmount() {
+        this.context.board.removeObject(this.functionGraph);
+    }
+
     //called only if shouldComponentUpdate returns true
     //use to render any child elements
     render() {
