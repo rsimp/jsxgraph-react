@@ -1,12 +1,12 @@
 var fs = require('fs');
+var packageMetadata = require("../../package.json");
 
 const VERSIONS_FILEPATH = './src/versions.json';
 
-//ensure versions.json is current
-var versions = JSON.parse(fs.readFileSync(VERSIONS_FILEPATH, 'utf8'));
-var version = require("../../package.json").version;
 
-if (versions.length == 0 || versions[0] < version) {
-    versions.splice(0, 0, version);
-    fs.writeFileSync(VERSIONS_FILEPATH, JSON.stringify(versions, null, 2));
+//ensure versions.json is current
+var publishedVersions = JSON.parse(fs.readFileSync(VERSIONS_FILEPATH, 'utf8'));
+if (publishedVersions.length == 0 || publishedVersions[0] < packageMetadata.version) {
+    publishedVersions.splice(0, 0, packageMetadata.version);
+    fs.writeFileSync(VERSIONS_FILEPATH, JSON.stringify(publishedVersions, null, 2));
 }
